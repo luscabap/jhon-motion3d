@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<BasePage />}>
             <Route index element={<HomePage />}/>
+            <Route path="/teste" element={<div><h2>ESSE É UM TESTE</h2></div>}/>
             <Route path="*" element={<NotFound />}/>
           </Route>
         </Routes>
