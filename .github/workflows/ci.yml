@@ -1,8 +1,7 @@
-name: Lucas Dev CI
+name: "CI: develop Workflow"
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   build:
