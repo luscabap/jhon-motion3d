@@ -5,8 +5,8 @@ function App() {
   return (
     <div>
       <h1 className={`${teste ? "bg-red-500" : "bg-blue-500"}`}>Hello World!</h1>
-      <h2>My name is Jhonathan</h2>
-      <h4 className={`${teste ? "bg-purple-400" : "bg-yellow-400"}`}>Teste to CI File</h4>
+      <h2>My name is Jhonathan, i'm 3D Designer</h2>
+      <h4 className={`${teste ? "bg-green-400" : "bg-yellow-400"}`}>Teste to CI File</h4>
       <button onClick={() => setTeste(prevValue => !prevValue)}>Trocar cor</button>
     </div>
   )
