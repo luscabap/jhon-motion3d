@@ -1,14 +1,21 @@
-import { useState } from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HomePage } from "./pages/HomePage"
+import { BasePage } from "./pages/BasePage"
+import { NotFound } from "./pages/NotFound"
+import ThemeProvider from "./components/ThemeProvider"
 
 function App() {
-  const [teste, setTeste] = useState(false)
   return (
-    <div>
-      <h1 className={`${teste ? "bg-red-500" : "bg-blue-500"}`}>Hello World!</h1>
-      <h2>My name is Jhonathan, i'm 3D Designer</h2>
-      <h4 className={`${teste ? "bg-green-400" : "bg-yellow-400"}`}>Teste to CI File</h4>
-      <button onClick={() => setTeste(prevValue => !prevValue)}>Trocar cor</button>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider>
+        <Routes>
+          <Route path="/" element={<BasePage />}>
+            <Route index element={<HomePage />}/>
+            <Route path="*" element={<NotFound />}/>
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 

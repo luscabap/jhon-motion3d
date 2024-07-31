@@ -2,4 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark {
+  --colorPrimary: #d900ff;
+  --colorSecondary: #394148;
+  --colorTerciary: #001830;
+  --colorContrast: #f3bf45;
+  --colorDark: #00060D;
+  --colorLight: #FEFEFE;
+  --colorBackground: #4D5159;
+  --colorFont: #FEFEFE;
+  --colorBackgroundModal: #000000bf
+}
 
+.light {
+  --colorPrimary: #640f85;
+  --colorSecondary: #3970a4;
+  --colorTerciary: #0553a1;
+  --colorContrast: #92731c;
+  --colorDark: #00060D;
+  --colorLight: #FEFEFE;
+  --colorBackground: #FEFEFE;
+  --colorFont: #0E0E0E;
+  --colorBackgroundModal: #000000bf
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-200 ease-in-out;
+  }
+}
