@@ -8,6 +8,13 @@ export default {
     extend: {
       colors: {
         "colorPrimary": "var(--colorPrimary)"
+      },
+      fontFamily: {
+        "fontMain": ['Inter', 'sans-serif'],
+        "fontContrast": ['Nordic', 'cursive']
+      },
+      backgroundImage: {
+        'gradient-background': 'var(--backgroundGradient)'
       }
     },
   },
