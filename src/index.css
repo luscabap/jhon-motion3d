@@ -21,17 +21,17 @@
 }
 
 .light {
-  --colorPrimary: #344035;
-  --colorSecondary: #1f302c;
-  --colorTerciary: #8d4747;
-  --colorContrast: #395d82;
+  --colorPrimary: #46537e;
+  --colorSecondary: #293149;
+  --colorTerciary: #758ee0;
+  --colorContrast: #7dbedb;
 
   --colorDark: #00060D;
   --colorLight: #FEFEFE;
 
-  --colorTextPrimary: #FEFEFE;
-  --colorTextSecondary: #b5b5b5;
-  --colorTextContrast: #395d82;
+  --colorTextPrimary: #00060D;
+  --colorTextSecondary: #3b3b3b;
+  --colorTextContrast: #7dbedb;
 
   --colorBackgroundModal: #000000bf;
 
