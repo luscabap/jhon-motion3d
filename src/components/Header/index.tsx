@@ -1,13 +1,26 @@
+import { useState } from "react";
+import { Logo } from "../Logo";
+import { Menu } from "../Menu";
+import { CiMenuFries } from "react-icons/ci";
+import useThemeContext from "../../hooks/useThemeContext";
+
 export const Header = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  const toggleMenuIsOpen = () => {
+    setMenuIsOpen(prevValue => !prevValue)
+  }
+
+  const { toggleTheme } = useThemeContext()
+
   return (
-    <header className="fixed w-full bg-zinc-800 rounded-lg">
-      <nav>
-        <ul className="flex justify-evenly items-center text-gray-200">
-          <li>Projects</li>
-          <li>About Me</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+    <header className="fixed w-full bg-zinc-800 rounded-lg flex items-center justify-between px-2 h-36">
+      <button onClick={toggleTheme} className="bg-colorContrast">TEMA</button>
+      <Logo />
+      <CiMenuFries size={45} onClick={toggleMenuIsOpen}/>
+      {
+        menuIsOpen && <Menu />
+      }
     </header>
   )
 }

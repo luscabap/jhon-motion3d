@@ -1,28 +1,18 @@
-import { useState } from "react";
-import useThemeContext from "../../hooks/useThemeContext";
+import { TitleSection } from "../../components/TitleSection";
 
 export const HomePage = () => {
-  const [teste, setTeste] = useState(false);
-
-  const { darkTheme, toggleTheme } = useThemeContext()
 
   return (
-    <div className="bg-zinc-500">
-      <h1>Home Page - TESTEEEE</h1>
-      <div className="bg-green-400">{ darkTheme ? "TRUE" : "FALSE" }</div>
-      <button onClick={toggleTheme} className="bg-colorPrimary">Trocar tema</button>
-      <div>
-        <h1 className={`${teste ? "bg-red-500" : "bg-blue-500"}`}>
-          Hello World!
-        </h1>
-        <h2>My name is Jhonathan, i'm 3D Designer</h2>
-        <h4 className={`${teste ? "bg-green-400" : "bg-yellow-400"}`}>
-          Teste to CI File
-        </h4>
-        <button onClick={() => setTeste((prevValue) => !prevValue)}>
-          Trocar cor
-        </button>
-      </div>
+    <div className="text-2xl">
+      <h1>Hello, i'm Jhonathan Motion3D</h1>
+      <h2 className="text-colorTextPrimary">Color Text Primary</h2>
+      <h2 className="text-colorTextSecondary">Color Text Secondary</h2>
+      <h2 className="text-colorTextContrast">Color Text Contrast</h2>
+      <h2 className="bg-colorPrimary">Color Primary</h2>
+      <h2 className="bg-colorSecondary">Color Secondary</h2>
+      <h2 className="bg-colorTerciary">Color Terciary</h2>
+      <TitleSection text="About me"/>
     </div>
   );
+
 };

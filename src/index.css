@@ -3,27 +3,49 @@
 @tailwind utilities;
 
 .dark {
-  --colorPrimary: #d900ff;
-  --colorSecondary: #394148;
-  --colorTerciary: #001830;
-  --colorContrast: #f3bf45;
+  --colorPrimary: #343840;
+  --colorSecondary: #212226;
+  --colorTerciary: #A6A6A6;
+  --colorContrast: #395d82;
+
   --colorDark: #00060D;
   --colorLight: #FEFEFE;
-  --colorBackground: #4D5159;
-  --colorFont: #FEFEFE;
-  --colorBackgroundModal: #000000bf
+
+  --colorTextPrimary: #FEFEFE;
+  --colorTextSecondary: #b5b5b5;
+  --colorTextContrast: #395d82;
+
+  --colorBackgroundModal: #000000bf;
+
+  --backgroundGradient: linear-gradient(180.2deg, rgb(50, 51, 55) 6.8%, rgb(48, 60, 66) 131%);
 }
 
 .light {
-  --colorPrimary: #640f85;
-  --colorSecondary: #3970a4;
-  --colorTerciary: #0553a1;
-  --colorContrast: #92731c;
+  --colorPrimary: #46537e;
+  --colorSecondary: #293149;
+  --colorTerciary: #758ee0;
+  --colorContrast: #7dbedb;
+
   --colorDark: #00060D;
   --colorLight: #FEFEFE;
-  --colorBackground: #FEFEFE;
-  --colorFont: #0E0E0E;
-  --colorBackgroundModal: #000000bf
+
+  --colorTextPrimary: #00060D;
+  --colorTextSecondary: #3b3b3b;
+  --colorTextContrast: #7dbedb;
+
+  --colorBackgroundModal: #000000bf;
+
+  --backgroundGradient: linear-gradient(180.2deg, rgb(210, 210, 210) 6.8%, rgb(177, 177, 177) 131%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Nordic";
+  src: url("./fonts/nordic.ttf") format("opentype");
 }
 
 @layer utilities {
