@@ -8,7 +8,7 @@ export const HomePage = () => {
 
   return (
     <div className="bg-zinc-500">
-      <h1>Home Page</h1>
+      <h1>Home Page - TESTEEEE</h1>
       <div className="bg-green-400">{ darkTheme ? "TRUE" : "FALSE" }</div>
       <button onClick={toggleTheme} className="bg-colorPrimary">Trocar tema</button>
       <div>
