@@ -20,7 +20,7 @@ export default {
       },
       fontFamily: {
         "fontMain": ['Inter', 'sans-serif'],
-        "fontContrast": ['Nordic', 'cursive']
+        "fontContrast": ['Monad', 'cursive']
       },
       backgroundImage: {
         'gradient-background': 'var(--backgroundGradient)'
