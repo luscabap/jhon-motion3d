@@ -11,7 +11,6 @@ export const ProjectPage = () => {
   const [project, setProject] = useState<ProjectType>()
 
   const fetchProject = useCallback(async () => {
-    console.log("TESTE", params.slugProject)
     const projectFinded = await dataProjects.find(item => item.slug === params.slugProject);
     setProject(projectFinded);
   }, [params])
