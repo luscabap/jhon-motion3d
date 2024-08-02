@@ -46,12 +46,13 @@ export const Menu = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="absolute right-0 top-36 bg-colorPrimary w-full origin-top-right py-8"
+      className="absolute right-0 top-36 bg-colorPrimary w-full origin-top-right py-8 z-40"
     >
       <motion.nav
         variants={itensVariants}
         initial="initial"
         animate="open"
+        className="z-40"
       >
         <ul className="flex flex-col items-center justify-start h-full gap-16 my-20">
           <li className="text-4xl">Home</li>
