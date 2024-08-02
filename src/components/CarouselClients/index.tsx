@@ -20,10 +20,10 @@ export const CarouselClients = () => {
           delay: 2000,
         }}
         pagination={true}
-        className="max-w-full my-8"
+        className="max-w-full my-8 z-30"
       >
         {dataClients.map((client) => (
-          <SwiperSlide key={client.id} className="max-w-full bg-colorTerciary flex flex-col items-center justify-between min-h-52 min-w-44 rounded-lg">
+          <SwiperSlide key={client.id} className="max-w-full bg-colorTerciary flex flex-col items-center justify-between min-h-52 min-w-44 rounded-lg z-30">
             <img src={client.srcImg} alt={`${client.name} logo`} className="rounded-lg"/>
             <h3 className="text-center text-colorContrast">{client.name}</h3>
           </SwiperSlide>
