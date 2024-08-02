@@ -1,5 +1,6 @@
-import jhonathan from "/jhonathan.png"
-import { TitleSection } from "../TitleSection"
+import jhonathan from "/jhonathan.png";
+import { TitleSection } from "../TitleSection";
+import { CarouselClients } from "../CarouselClients";
 
 export const AboutMe = () => {
   return (
@@ -12,6 +13,7 @@ export const AboutMe = () => {
         <p className="indent-5">I started as a Generalist in studios in Brazil and, in 2021, I became a full-time freelancer, fosusing on 3D animation and Lookdev. <span className="text-colorTextContrast">I'm open to messages at any time, looking forward to new ideas, challenges and, of course, good laughs!</span> Thank you for appreciating my work, done with dedication and creativity.
         </p>
       </div>
+      <CarouselClients />
     </section>
   )
 }
