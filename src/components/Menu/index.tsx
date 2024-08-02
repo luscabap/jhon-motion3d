@@ -4,9 +4,11 @@ export const Menu = () => {
   const menuVariants = {
     initial: {
       scaleY: 0,
+      opacity: 0.5
     },
     animate: {
       scaleY: 1,
+      opacity: 1,
       transition: {
         duration: 0.3,
         ease: [0.12, 0, 0.39, 0],
@@ -14,6 +16,7 @@ export const Menu = () => {
     },
     exit: {
       scaleY: 0,
+      opacity: 0,
       transition: {
         duration: 0.5,
         ease: [0.22, 1, 0.36, 1],

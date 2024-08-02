@@ -44,8 +44,8 @@
 }
 
 @font-face {
-  font-family: "Nordic";
-  src: url("./fonts/nordic.ttf") format("opentype");
+  font-family: "Monad";
+  src: url("./fonts/Monad.otf") format("opentype");
 }
 
 @layer utilities {
