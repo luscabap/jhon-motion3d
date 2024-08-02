@@ -5,6 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import useThemeContext from "../../hooks/useThemeContext";
 import { Logo } from "../Logo";
 import { Menu } from "../Menu";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -13,11 +14,16 @@ export const Header = () => {
     setMenuIsOpen(prevValue => !prevValue)
   }
 
-  const { toggleTheme } = useThemeContext()
+  const { toggleTheme, darkTheme } = useThemeContext()
 
   return (
     <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36`}>
-      <button onClick={toggleTheme} className="bg-colorContrast">TEMA</button>
+      {
+        darkTheme ? <FaSun onClick={toggleTheme} size={45} className="cursor-pointer"/> : <FaMoon onClick={toggleTheme} size={45} className="cursor-pointer"/>
+      }
+
+
+
       <Logo />
  
         {
