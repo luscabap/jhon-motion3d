@@ -17,7 +17,7 @@ export const Header = () => {
   const { toggleTheme, darkTheme } = useThemeContext()
 
   return (
-    <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36`}>
+    <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36 z-50`}>
       {
         darkTheme ? <FaSun onClick={toggleTheme} size={45} className="cursor-pointer"/> : <FaMoon onClick={toggleTheme} size={45} className="cursor-pointer"/>
       }
