@@ -14,7 +14,7 @@ export const ProjectBanner = ({ slugProject, srcImg, nameProject }:ProjectBanner
         src={srcImg} 
         alt={`${nameProject} banner`} 
         onClick={() => navigate(`/project/${slugProject}`)}
-        className="cursor-pointer"
+        className="cursor-pointer w-full"
       />
   )
 }
