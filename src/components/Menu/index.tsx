@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ContactSocialMedia } from "../ContactSocialMedia";
 
 export const Menu = () => {
   const menuVariants = {
@@ -45,7 +46,7 @@ export const Menu = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="absolute right-0 top-36 bg-colorPrimary w-full origin-top-right"
+      className="absolute right-0 top-36 bg-colorPrimary w-full origin-top-right py-8"
     >
       <motion.nav
         variants={itensVariants}
@@ -59,6 +60,7 @@ export const Menu = () => {
           <li className="text-4xl">Projects</li>
           <li className="text-4xl">Contact</li>
         </ul>
+        <ContactSocialMedia size="normal"/>
       </motion.nav>
     </motion.aside>
   );
