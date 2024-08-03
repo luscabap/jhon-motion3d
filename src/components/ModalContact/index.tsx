@@ -3,7 +3,7 @@ import { MdAlternateEmail } from "react-icons/md";
 
 export const ModalContact = () => {
   return (
-    <div className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg">
+    <div className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50">
       <a href="https://wa.me/556798891617" target="_blank" className="flex items-center justify-start gap-2">
         <FaWhatsapp className="w-12 h-12"/>
         <h5 className="text-xl">Contact me in WhatsApp</h5>
