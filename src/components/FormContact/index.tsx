@@ -1,10 +1,16 @@
+import { AnimatePresence } from "framer-motion";
 import useFormContact from "../../hooks/useFormContact";
 import { ErrorMessage } from "../ErrorMessage";
+import { ModalSuccess } from "../ModalSuccess";
 
 export const FormContact = () => {
-  const { errors, handleSubmit, onSubmit, register} = useFormContact();
+  const { errors, handleSubmit, onSubmit, register, isSuccessMessage, closeModalSuccess } = useFormContact();
 
   return (
+    <div className="relative">
+    <AnimatePresence>
+      { isSuccessMessage && <ModalSuccess closeModalSuccess={closeModalSuccess}/> }
+    </AnimatePresence>
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center my-8 gap-6"
@@ -67,5 +73,6 @@ export const FormContact = () => {
         Send E-mail
       </button>
     </form>
+    </div>
   );
 };
