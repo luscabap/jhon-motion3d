@@ -8,11 +8,9 @@ export const HomePage = () => {
     <div className="relative" id="home">
       <Indtroduction />
       <div className="flex flex-col items-center justify-start min-h-screen gap-12 relative bg-gradient-background">
-        <div className="flex flex-col w-full px-5">
+        <div className="flex flex-col w-full px-5 2xl:px-52">
           <Projects />
-        </div>
-        <AboutMe />
-        <div className="flex flex-col w-full px-5">
+          <AboutMe />
           <Contact />
         </div>
       </div>

@@ -5,11 +5,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { dataClients } from "../../data/dataClients";
+import { TitleSection } from "../TitleSection";
 
 export const CarouselClients = () => {
   return (
     <div>
-      <h3 className="px-5 font-fontContrast text-3xl">Clients</h3>
+      <TitleSection text="Clients"/>
       <Swiper
         spaceBetween={40}
         centeredSlides={true}
@@ -23,8 +24,8 @@ export const CarouselClients = () => {
         className="max-w-full my-8 z-30"
       >
         {dataClients.map((client) => (
-          <SwiperSlide key={client.id} className="max-w-full bg-colorTerciary flex flex-col items-center justify-between min-h-52 min-w-44 rounded-lg z-30">
-            <img src={client.srcImg} alt={`${client.name} logo`} className="rounded-lg"/>
+          <SwiperSlide key={client.id} className="bg-colorTerciary flex flex-col items-center justify-between min-h-52 rounded-lg z-30 lg:min-h-96 2xl:min-h-52 2xl:w-24">
+            <img src={client.srcImg} alt={`${client.name} logo`} className="rounded-lg 2xl:h-12"/>
             <h3 className="text-center text-colorContrast">{client.name}</h3>
           </SwiperSlide>
         ))}

@@ -34,16 +34,24 @@ export const ContactSocialMedia = ({ size }:ContactSocialMediaProps) => {
 
   return (
     <div className="flex items-center justify-center gap-6 text-colorContrast">
-      <a href="https://www.linkedin.com/in/jhonathanoliveira3d/" target="_blank">
+      <a href="https://www.linkedin.com/in/jhonathanoliveira3d/" target="_blank"
+        className="hover:text-colorPrimary"
+      >
         <FaLinkedinIn {...iconProps}/>
       </a>
-      <a href="https://www.behance.net/jhonathanoliveira" target="_blank">
+      <a href="https://www.behance.net/jhonathanoliveira" target="_blank"
+        className="hover:text-colorPrimary"
+      >
         <FaBehance {...iconProps}/>
       </a>
-      <a href="https://wa.me/556798891617" target="_blank">
+      <a href="https://wa.me/556798891617" target="_blank"
+        className="hover:text-colorPrimary"
+      >
         <FaWhatsapp {...iconProps}/>
       </a>
-      <a href="https://www.instagram.com/jhonmotion3d_/" target="_blank">
+      <a href="https://www.instagram.com/jhonmotion3d_/" target="_blank"
+        className="hover:text-colorPrimary"
+      >
         <FaInstagram {...iconProps}/>
       </a>
     </div>
