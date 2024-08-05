@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ContactSocialMedia } from "../ContactSocialMedia";
+import { dataLinks } from "../../data/dataLinks";
+import { Link } from "react-scroll"
 
 export const Menu = () => {
   const menuVariants = {
@@ -79,11 +81,20 @@ export const Menu = () => {
 
           className="flex flex-col items-center justify-start h-full gap-16 my-20"
         >
-          <li className="text-4xl">Home</li>
-          <li className="text-4xl">About Me</li>
-          <li className="text-4xl">Knowledge</li>
-          <li className="text-4xl">Projects</li>
-          <li className="text-4xl">Contact</li>
+          {
+            dataLinks.map(link => (
+              <li key={link.id}>
+                <Link
+                  to={link.toId}
+                  spy={true}
+                  smooth={true}
+                  offset={-170}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))
+          }
         </motion.ul>
         <ContactSocialMedia size="normal"/>
       </motion.nav>

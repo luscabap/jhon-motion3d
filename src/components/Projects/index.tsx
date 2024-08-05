@@ -4,7 +4,7 @@ import { TitleSection } from "../TitleSection"
 
 export const Projects = () => {
   return (
-    <section className="overflow-x-hidden">
+    <section className="overflow-x-hidden" id="projects">
       <TitleSection text="Projects"/>
       <div className="flex flex-col items-cneter justify-center gap-12">
         { dataProjects.map(project => (
