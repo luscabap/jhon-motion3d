@@ -6,6 +6,8 @@ import { useState } from "react";
 import { ModalContact } from "../../components/ModalContact";
 import { IoCloseOutline } from "react-icons/io5";
 import { Indtroduction } from "../../components/Logo/Introduction";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion"
 
 export const BasePage = () => {
   const [modalContactIsOpen, setModalContactIsOpen] = useState(false);
@@ -20,21 +22,34 @@ export const BasePage = () => {
       <Indtroduction />
       <div className="relative bg-gradient-background">
         <div className="bg-colorContrast right-2 bottom-2 rounded-full flex items-center justify-center p-1 fixed z-50">
-          {modalContactIsOpen ? (
-            <IoCloseOutline
-              size={50}
-              className="w-16 h-16 text-colorTextPrimary"
-              onClick={toggleModalContactIsOpen}
-            />
-          ) : (
-            <TiMessageTyping
-              size={50}
-              className="w-16 h-16 text-colorTextPrimary"
-              onClick={toggleModalContactIsOpen}
-            />
-          )}
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                duration: 1
+              }}
+            >
+              {modalContactIsOpen ? (
+                <IoCloseOutline
+                  size={50}
+                  className="w-16 h-16 text-colorTextPrimary"
+                  onClick={toggleModalContactIsOpen}
+                />
+              ) : (
+                <TiMessageTyping
+                  size={50}
+                  className="w-16 h-16 text-colorTextPrimary"
+                  onClick={toggleModalContactIsOpen}
+                />
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
-        {modalContactIsOpen && <ModalContact />}
+        <AnimatePresence>
+          {modalContactIsOpen && <ModalContact />}
+        </AnimatePresence>
         <div className="pt-36">
           <Outlet />
         </div>
