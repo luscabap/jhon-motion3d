@@ -7,6 +7,7 @@ export const AboutMe = () => {
   return (
     <motion.section
       className="w-full flex flex-col gap-8"
+      id="about-me"
     >
       <TitleSection text="About Me"/>
       <motion.img 
