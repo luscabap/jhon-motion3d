@@ -1,30 +1,16 @@
-import { SubmitHandler, useForm } from "react-hook-form";
-import { FormContactTypeProps } from "../../types/FormContactType";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FormSchema } from "../../schemas/FormSchema";
+import { AnimatePresence } from "framer-motion";
+import useFormContact from "../../hooks/useFormContact";
 import { ErrorMessage } from "../ErrorMessage";
+import { ModalSuccess } from "../ModalSuccess";
 
 export const FormContact = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset
-  } = useForm<FormContactTypeProps>({
-    resolver: zodResolver(FormSchema),
-  });
-
-  const onSubmit: SubmitHandler<FormContactTypeProps> = (e) => {
-    console.log(e);
-      reset({
-        about: "",
-        email: "",
-        message: "",
-        name: ""
-      })
-  };
+  const { errors, handleSubmit, onSubmit, register, isSuccessMessage, closeModalSuccess } = useFormContact();
 
   return (
+    <div className="relative">
+    <AnimatePresence>
+      { isSuccessMessage && <ModalSuccess closeModalSuccess={closeModalSuccess}/> }
+    </AnimatePresence>
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center my-8 gap-6"
@@ -87,5 +73,6 @@ export const FormContact = () => {
         Send E-mail
       </button>
     </form>
+    </div>
   );
 };

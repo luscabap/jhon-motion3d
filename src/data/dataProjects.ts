@@ -13,6 +13,7 @@ export const dataProjects: ProjectType[]  = [
       "Cinema4D",
       "Blender"
     ],
+    primary: true,
     imagesProject: [
      {
       id: uuidv4(),
@@ -39,6 +40,7 @@ export const dataProjects: ProjectType[]  = [
       "Cinema4D",
       "Blender"
     ],
+    primary: false,
     imagesProject: [
      {
       id: uuidv4(),
@@ -65,6 +67,7 @@ export const dataProjects: ProjectType[]  = [
       "Cinema4D",
       "Blender"
     ],
+    primary: true,
     imagesProject: [
      {
       id: uuidv4(),
@@ -91,6 +94,7 @@ export const dataProjects: ProjectType[]  = [
       "Cinema4D",
       "Blender"
     ],
+    primary: false,
     imagesProject: [
      {
       id: uuidv4(),
@@ -129,6 +133,7 @@ export const dataProjects: ProjectType[]  = [
       "Cinema4D",
       "Blender"
     ],
+    primary: true,
     imagesProject: [
      {
       id: uuidv4(),
