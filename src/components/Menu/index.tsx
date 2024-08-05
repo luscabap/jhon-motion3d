@@ -66,14 +66,12 @@ export const Menu = () => {
               y: 0,
             }}
             exit={{
-              clipPath: "inset(10% 50% 90% 50% round 10px)",
               y: -200,
               opacity: 0,
             }}
             transition={{
               type: "spring",
-              duration: 0.7,
-              delayChildren: 0.3,
+              duration: 0.5,
               bounce: 0.2,
               damping: 10,
               stiffness: 200
