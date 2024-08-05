@@ -1,6 +1,7 @@
 type imagesProjectProps = {
   id: string,
-  img: string
+  img: string,
+  primary: boolean
 }
 
 export type ProjectType = {

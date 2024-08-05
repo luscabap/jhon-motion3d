@@ -19,7 +19,7 @@ export const ProjectPage = () => {
       transition={{
         duration: 0.5
       }}
-      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start"
+      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start overflow-x-hidden"
     >
       <h2 className="text-3xl font-fontContrast text-colorTextContrast">{ project?.name }</h2>
       <p className="indent-4">{project?.about}</p>
@@ -29,9 +29,21 @@ export const ProjectPage = () => {
         {project?.softwaresUseds.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
       <div className="flex flex-col items-center justify-center gap-8">
-        { project?.imagesProject.map(img => (
-          <img src={img.img} key={img.id} className="max-w-full"/>
-        )) }
+        { project?.imagesProject.map(img => { 
+          const initialScaleX = img.primary ? -100 : 100
+          return (
+              <motion.img 
+                src={img.img} 
+                key={img.id} 
+                className="max-w-full"
+                initial={{ x: initialScaleX }}
+                whileInView={{ x: 0 }}
+                transition={{
+                  duration: 0.3
+                }}
+              />
+            ) 
+          })}
       </div>
       <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer" onClick={() => navigate("/")}>
         <IoChevronBack />
