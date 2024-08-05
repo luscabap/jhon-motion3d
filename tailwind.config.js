@@ -17,6 +17,7 @@ export default {
         "colorTextSecondary": "var(--colorTextSecondary)",
         "colorTextContrast": "var(--colorTextContrast)",
         "colorBackgroundModal": "var(--colorBackgroundModal)",
+        "colorContrastLight": "var(--colorContrastLight)"
       },
       fontFamily: {
         "fontMain": ['Inter', 'sans-serif'],
