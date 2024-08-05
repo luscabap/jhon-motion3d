@@ -10,6 +10,7 @@ export type ProjectType = {
   name: string,
   about: string,
   client: string,
+  primary: boolean,
   softwaresUseds: string[],
   imagesProject: imagesProjectProps[]
 }
