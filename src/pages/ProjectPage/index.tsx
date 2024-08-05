@@ -1,31 +1,26 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { dataProjects } from "../../data/dataProjects";
-import { useCallback, useEffect, useState } from "react";
-import { ProjectType } from "../../types/ProjectsTypes";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { IoChevronBack } from "react-icons/io5";
+import useFetchProject from "../../hooks/useFetchProjects";
+import { useNavigate } from "react-router-dom";
 
 export const ProjectPage = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const params = useParams();
+  const { project, fetchProject } = useFetchProject();
   const navigate = useNavigate();
-  const [project, setProject] = useState<ProjectType>()
-
-  const fetchProject = useCallback(async () => {
-    const projectFinded = await dataProjects.find(item => item.slug === params.slugProject);
-    setProject(projectFinded);
-  }, [params])
 
   useEffect(() => {
     fetchProject()
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000)
-  }, [params, fetchProject])
-
-  { isLoading && <div>CARREGANDO...</div> }
+  }, [fetchProject])
 
   return (
-    <div className="flex flex-col gap-8 mt-12 px-4 justify-center items-start">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.5
+      }}
+      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start"
+    >
       <h2 className="text-3xl font-fontContrast text-colorTextContrast">{ project?.name }</h2>
       <p className="indent-4">{project?.about}</p>
       <p>Client: {project?.client}</p>
@@ -43,6 +38,6 @@ export const ProjectPage = () => {
         <button>Back to homepage</button>
       </div>
 
-    </div>
+    </motion.div>
   )
 }
