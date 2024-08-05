@@ -17,7 +17,7 @@ export const ProjectPage = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.5
+        duration: 0.3
       }}
       className="flex flex-col gap-8 mt-12 px-4 justify-center items-start overflow-x-hidden"
     >
@@ -45,7 +45,7 @@ export const ProjectPage = () => {
             ) 
           })}
       </div>
-      <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer" onClick={() => navigate("/")}>
+      <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer my-12" onClick={() => navigate("/")}>
         <IoChevronBack />
         <button>Back to homepage</button>
       </div>
