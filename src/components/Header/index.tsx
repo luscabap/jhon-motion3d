@@ -6,6 +6,7 @@ import useThemeContext from "../../hooks/useThemeContext";
 import { Logo } from "../Logo";
 import { Menu } from "../Menu";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { MenuDesktop } from "../MenuDesktop";
 
 export const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -17,15 +18,18 @@ export const Header = () => {
   const { toggleTheme, darkTheme } = useThemeContext()
 
   return (
-    <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36 z-50`}>
-      {
-        darkTheme ? <FaSun onClick={toggleTheme} size={45} className="cursor-pointer"/> : <FaMoon onClick={toggleTheme} size={45} className="cursor-pointer"/>
-      }
+    <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36 z-50 2xl:px-8`}>
+      <div className="2xl:w-1/3">
+        {
+          darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-8 2xl:h-8"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-8 2xl:h-8"/>
+        }
+      </div>
 
-
-
-      <Logo />
- 
+      <MenuDesktop />
+      <div className="flex justify-center items-center 2xl:w-1/3 2xl:justify-end">
+        <Logo />
+      </div>
+      <div className="2xl:hidden">
         {
           menuIsOpen 
           ? <IoCloseOutline size={45} onClick={toggleMenuIsOpen} className="cursor-pointer"/>
@@ -37,6 +41,7 @@ export const Header = () => {
           menuIsOpen && <Menu />
         }
       </AnimatePresence>
+      </div>
     </header>
   )
 }

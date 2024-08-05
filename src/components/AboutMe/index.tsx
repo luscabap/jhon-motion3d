@@ -11,7 +11,7 @@ export const AboutMe = () => {
     >
       <TitleSection text="About Me"/>
       <motion.img 
-        src={jhonathan} alt="Jhonathan photo" className="w-full"
+        src={jhonathan} alt="Jhonathan photo" className="w-full 2xl:h-96 2xl:w-1/3 2xl:mx-auto"
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{
@@ -19,7 +19,7 @@ export const AboutMe = () => {
         }}
       />
       <motion.div 
-        className="flex flex-col w-full px-5 gap-8"
+        className="flex flex-col w-full gap-8"
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{

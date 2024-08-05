@@ -20,30 +20,32 @@ export const FormContact = () => {
       transition={{ duration: 1 }}
     >
       <div className="flex flex-col gap-12 w-full">
-        <div className="flex flex-col gap-4">
-          <label htmlFor="nameField">Enter your name</label>
-          <input
-            className="border-none bg-colorSecondary rounded-md py-2 px-3"
-            id="nameFiel"
-            {...register("name")}
-            placeholder="Name"
-          />
-          {errors.name?.message && (
-            <ErrorMessage text={errors?.name?.message} />
-          )}
-        </div>
+        <div className="flex flex-col gap-12 w-full 2xl:flex-row 2xl:justify-between">
+          <div className="flex flex-col gap-4 2xl:w-full">
+            <label htmlFor="nameField">Enter your name</label>
+            <input
+              className="border-none bg-colorSecondary rounded-md py-2 px-3"
+              id="nameFiel"
+              {...register("name")}
+              placeholder="Name"
+            />
+            {errors.name?.message && (
+              <ErrorMessage text={errors?.name?.message} />
+            )}
+          </div>
 
-        <div className="flex flex-col gap-4">
-          <label htmlFor="emailField">Enter your email</label>
-          <input
-            className="border-none bg-colorSecondary rounded-md py-2 px-3"
-            id="emailFiel"
-            {...register("email")}
-            placeholder="E-mail"
-          />
-          {errors.email?.message && (
-            <ErrorMessage text={errors?.email?.message} />
-          )}
+          <div className="flex flex-col gap-4 2xl:w-full">
+            <label htmlFor="emailField">Enter your email</label>
+            <input
+              className="border-none bg-colorSecondary rounded-md py-2 px-3"
+              id="emailFiel"
+              {...register("email")}
+              placeholder="E-mail"
+            />
+            {errors.email?.message && (
+              <ErrorMessage text={errors?.email?.message} />
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -73,7 +75,7 @@ export const FormContact = () => {
         </div>
       </div>
 
-      <button type="submit" className="bg-colorContrast px-2 py-4 rounded-2xl">
+      <button type="submit" className="bg-colorContrast px-2 py-4 rounded-2xl hover:bg-colorPrimary hover:text-colorTextContrast">
         Send E-mail
       </button>
     </motion.form>

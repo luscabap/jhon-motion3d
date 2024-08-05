@@ -19,7 +19,7 @@ export const ProjectPage = () => {
       transition={{
         duration: 0.3
       }}
-      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start overflow-x-hidden"
+      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start overflow-x-hidden 2xl:px-52"
     >
       <h2 className="text-3xl font-fontContrast text-colorTextContrast">{ project?.name }</h2>
       <p className="indent-4">{project?.about}</p>
@@ -28,14 +28,14 @@ export const ProjectPage = () => {
       <ul>
         {project?.softwaresUseds.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
-      <div className="flex flex-col items-center justify-center gap-8">
+      <div className="flex flex-col items-center justify-center gap-8 lg:gap-16 2xl:w-full">
         { project?.imagesProject.map(img => { 
           const initialScaleX = img.primary ? -100 : 100
           return (
               <motion.img 
                 src={img.img} 
                 key={img.id} 
-                className="max-w-full"
+                className="max-w-full lg:w-3/4 2xl:w-1/3"
                 initial={{ x: initialScaleX }}
                 whileInView={{ x: 0 }}
                 transition={{
@@ -43,9 +43,9 @@ export const ProjectPage = () => {
                 }}
               />
             ) 
-          })}
+        })}
       </div>
-      <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer my-12" onClick={() => navigate("/")}>
+      <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer my-12 hover:text-colorTextContrast" onClick={() => navigate("/")}>
         <IoChevronBack />
         <button>Back to homepage</button>
       </div>

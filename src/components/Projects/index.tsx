@@ -6,7 +6,7 @@ export const Projects = () => {
   return (
     <section className="overflow-x-hidden" id="projects">
       <TitleSection text="Projects"/>
-      <div className="flex flex-col items-cneter justify-center gap-12">
+      <div className="flex flex-col items-center justify-center gap-12 lg:gap-12 2xl:flex-row flex-wrap">
         { dataProjects.map(project => (
           <ProjectBanner 
             nameProject={project.name}
