@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import useFormContact from "../../hooks/useFormContact";
 import { ErrorMessage } from "../ErrorMessage";
 import { ModalSuccess } from "../ModalSuccess";
+import { motion } from "framer-motion";
 
 export const FormContact = () => {
   const { errors, handleSubmit, onSubmit, register, isSuccessMessage, closeModalSuccess } = useFormContact();
@@ -11,9 +12,12 @@ export const FormContact = () => {
     <AnimatePresence>
       { isSuccessMessage && <ModalSuccess closeModalSuccess={closeModalSuccess}/> }
     </AnimatePresence>
-    <form
+    <motion.form
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center justify-center my-8 gap-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-4">
@@ -72,7 +76,7 @@ export const FormContact = () => {
       <button type="submit" className="bg-colorContrast px-2 py-4 rounded-2xl">
         Send E-mail
       </button>
-    </form>
+    </motion.form>
     </div>
   );
 };

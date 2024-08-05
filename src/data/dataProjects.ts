@@ -17,15 +17,18 @@ export const dataProjects: ProjectType[]  = [
     imagesProject: [
      {
       id: uuidv4(),
-      img: "/projects/apple/asset1.jpg"
+      img: "/projects/apple/asset1.jpg",
+      primary: true,
     },
      {
       id: uuidv4(),
-      img: "/projects/apple/asset2.jpg"
+      img: "/projects/apple/asset2.jpg",
+      primary: false,
     },
      {
       id: uuidv4(),
-      img: "/projects/apple/asset3.jpg"
+      img: "/projects/apple/asset3.jpg",
+      primary: true,
     },
     ]
   },
@@ -44,15 +47,18 @@ export const dataProjects: ProjectType[]  = [
     imagesProject: [
      {
       id: uuidv4(),
-      img: "/projects/creme/asset1.png"
+      img: "/projects/creme/asset1.png",
+      primary: true,
     },
      {
       id: uuidv4(),
-      img: "/projects/creme/asset2.png"
+      img: "/projects/creme/asset2.png",
+      primary: false,
     },
      {
       id: uuidv4(),
-      img: "/projects/creme/asset3.png"
+      img: "/projects/creme/asset3.png",
+      primary: true,
     },
     ]
   },
@@ -71,15 +77,18 @@ export const dataProjects: ProjectType[]  = [
     imagesProject: [
      {
       id: uuidv4(),
-      img: "/projects/razer/asset1.png"
+      img: "/projects/razer/asset1.png",
+      primary: true,
     },
      {
       id: uuidv4(),
-      img: "/projects/razer/asset2.png"
+      img: "/projects/razer/asset2.png",
+      primary: false,
     },
      {
       id: uuidv4(),
-      img: "/projects/razer/asset3.png"
+      img: "/projects/razer/asset3.png",
+      primary: true,
     },
     ]
   },
@@ -98,27 +107,33 @@ export const dataProjects: ProjectType[]  = [
     imagesProject: [
      {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset1.png"
+      img: "/projects/air-jordan/asset1.png",
+      primary: true,
     },
      {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset2.png"
+      img: "/projects/air-jordan/asset2.png",
+      primary: false,
     },
     {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset3.png"
+      img: "/projects/air-jordan/asset3.png",
+      primary: true,
     },
     {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset4.png"
+      img: "/projects/air-jordan/asset4.png",
+      primary: false,
     },
     {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset5.png"
+      img: "/projects/air-jordan/asset5.png",
+      primary: true,
     },
     {
       id: uuidv4(),
-      img: "/projects/air-jordan/asset6.png"
+      img: "/projects/air-jordan/asset6.png",
+      primary: false,
     },
     ]
   },
@@ -137,15 +152,18 @@ export const dataProjects: ProjectType[]  = [
     imagesProject: [
      {
       id: uuidv4(),
-      img: "/projects/rtx/asset1.jpg"
+      img: "/projects/rtx/asset1.jpg",
+      primary: true,
     },
      {
       id: uuidv4(),
-      img: "/projects/rtx/asset2.jpg"
+      img: "/projects/rtx/asset2.jpg",
+      primary: false,
     },
      {
       id: uuidv4(),
-      img: "/projects/rtx/asset3.jpg"
+      img: "/projects/rtx/asset3.jpg",
+      primary: true,
     },
     ]
   },
