@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { IoChevronBack } from "react-icons/io5";
 import useFetchProject from "../../hooks/useFetchProjects";
-import { useNavigate } from "react-router-dom";
+import { ButtonBackHomepage } from "../../components/ButtonBackHomepage";
 
 export const ProjectPage = () => {
   const { project, fetchProject } = useFetchProject();
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProject()
@@ -19,7 +17,7 @@ export const ProjectPage = () => {
       transition={{
         duration: 0.3
       }}
-      className="flex flex-col gap-8 mt-12 px-4 justify-center items-start overflow-x-hidden 2xl:px-52"
+      className="flex flex-col gap-8 pt-48 px-4 justify-center items-start overflow-x-hidden 2xl:px-52 mb-14"
     >
       <h2 className="text-3xl font-fontContrast text-colorTextContrast">{ project?.name }</h2>
       <p className="indent-4">{project?.about}</p>
@@ -45,11 +43,7 @@ export const ProjectPage = () => {
             ) 
         })}
       </div>
-      <div className="inline-flex items-center justify-center gap-2 mx-auto cursor-pointer my-12 hover:text-colorTextContrast" onClick={() => navigate("/")}>
-        <IoChevronBack />
-        <button>Back to homepage</button>
-      </div>
-
+        <ButtonBackHomepage size="normal"/>
     </motion.div>
   )
 }

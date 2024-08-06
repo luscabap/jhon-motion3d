@@ -7,13 +7,17 @@ import { Logo } from "../Logo";
 import { Menu } from "../Menu";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { MenuDesktop } from "../MenuDesktop";
+import { useParams } from "react-router-dom";
 
 export const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenuIsOpen = () => {
-    setMenuIsOpen(prevValue => !prevValue)
+    setMenuIsOpen(pv => !pv)
   }
+
+  const params = useParams()
+  const ternaryOperator = params.slugProject ? true : false;
 
   const { toggleTheme, darkTheme } = useThemeContext()
 
@@ -25,7 +29,7 @@ export const Header = () => {
         }
       </div>
 
-      <MenuDesktop />
+      <MenuDesktop ternaryOperator={ternaryOperator}/>
       <div className="flex justify-center items-center 2xl:w-1/3 2xl:justify-end">
         <Logo />
       </div>

@@ -16,7 +16,7 @@ export const ProjectBanner = ({ slugProject, srcImg, nameProject, primary }:Proj
         src={srcImg} 
         alt={`${nameProject} banner`} 
         onClick={() => navigate(`/project/${slugProject}`)}
-        className="cursor-pointer w-full lg:w-3/4 2xl:w-1/4"
+        className="cursor-pointer w-full lg:w-3/4 2xl:w-1/4 2xl:max-h-80"
         initial={{ opacity: 0, x: animationX }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: animationX }}
