@@ -1,29 +1,27 @@
-name: "CI: develop Workflow"
+name: "CI: JhonMotion3D Continuous Integrating";
+
 on:
   pull_request:
     types: [opened, synchronize]
 
 jobs:
-  Deploy:
+  linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Installing Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-      - name: Install npm dependencies
+      - name: Runs installation
         run: npm install
-      - name: Run build task
-        run: npm run build
-      - name: Deploy para o meu hosting
-        uses: easingthemes/ssh-deploy@main
+      - name: Run linter
+        run: npm run lint
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
-          ARGS: "-rlgoDzvc -i --delete"
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-          EXCLUDE: "/dist/, /node_modules/"
+          node-version: 18.17.0
+      - name: Runs installation
+        run: npm install
+      - name: Runs test
+        run: npm run test
