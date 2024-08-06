@@ -1,4 +1,4 @@
-name: "CI: JhonMotion3D Continuous Integrating";
+name: "CI: JhonMotion3D Continuous Integrating"
 
 on:
   pull_request:
