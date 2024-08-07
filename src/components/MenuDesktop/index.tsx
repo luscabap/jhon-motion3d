@@ -26,7 +26,7 @@ export const MenuDesktop = ({ ternaryOperator }: MenuDesktopProps) => {
         ? <MenuProject nameProject={project?.name} />
         : dataLinks.map(link => (
               <motion.li key={link.id}
-                className="cursor-pointer bg-transparent hover:bg-colorPrimary hover:rounded-lg transition-all px-1 py-2 hover:text-colorTextContrast"
+                className="cursor-pointer bg-transparent hover:bg-colorPrimary hover:rounded-lg transition-all px-1 py-2 hover:text-colorTextContrast 2xl:text-base"
                 whileTap={{
                   scale: 1.5
                 }}

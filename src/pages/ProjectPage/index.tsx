@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { IoChevronBack } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { ButtonWithIcon } from "../../components/ButtonWithIcon";
 import useFetchProject from "../../hooks/useFetchProjects";
-import { ButtonBackHomepage } from "../../components/ButtonBackHomepage";
 
 export const ProjectPage = () => {
   const { project, fetchProject } = useFetchProject();
@@ -9,6 +11,8 @@ export const ProjectPage = () => {
   useEffect(() => {
     fetchProject()
   }, [fetchProject])
+
+  const navigate = useNavigate()
 
   return (
     <motion.div
@@ -43,7 +47,12 @@ export const ProjectPage = () => {
             ) 
         })}
       </div>
-        <ButtonBackHomepage size="normal"/>
+      <ButtonWithIcon 
+        size="normal"
+        text="Back to homepage"
+        icon={<IoChevronBack />}
+        onClick={() => navigate("/")}
+      />
     </motion.div>
   )
 }
