@@ -14,20 +14,20 @@ export const BasePage = () => {
   };
 
   return (
-    <main className="font-fontMain min-h-screen bg-gradient-background transition-all duration-500 ease-in-out text-colorTextPrimary text-xl">
+    <main className="font-fontMain min-h-screen bg-gradient-background transition-all duration-500 ease-in-out text-colorTextPrimary text-xl 2xl:text-lg">
       <Header />
       <div className="relative bg-gradient-background">
-        <div className="bg-colorContrast right-2 bottom-2 rounded-full flex items-center justify-center p-1 fixed z-50 hover:bg-colorContrastLight">
+        <div className="bg-colorContrast right-3 bottom-3 rounded-full flex items-center justify-center p-1 fixed z-50 hover:bg-colorContrastLight">
           <AnimatePresence>
             <motion.div>
               {modalContactIsOpen ? (
                 <IoCloseOutline
-                  className="w-16 h-16 text-colorTextPrimary cursor-pointer hover:text-colorDark"
+                  className="w-14 h-14 text-colorTextPrimary cursor-pointer hover:text-colorDark"
                   onClick={toggleModalContactIsOpen}
                 />
               ) : (
                 <button
-                  className="w-16 h-16 text-colorTextPrimary font-bold text-3xl flex justify-center items-center cursor-pointer hover:text-colorDark"
+                  className="w-14 h-14 text-colorTextPrimary font-bold text-3xl flex justify-center items-center cursor-pointer hover:text-colorDark"
                   onClick={toggleModalContactIsOpen}
                 >. . .</button>
               )}

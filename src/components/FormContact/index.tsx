@@ -3,6 +3,9 @@ import useFormContact from "../../hooks/useFormContact";
 import { ErrorMessage } from "../ErrorMessage";
 import { ModalSuccess } from "../ModalSuccess";
 import { motion } from "framer-motion";
+import { ButtonWithIcon } from "../ButtonWithIcon";
+import { FiSend } from "react-icons/fi";
+
 
 export const FormContact = () => {
   const { errors, handleSubmit, onSubmit, register, isSuccessMessage, closeModalSuccess } = useFormContact();
@@ -74,10 +77,14 @@ export const FormContact = () => {
           )}
         </div>
       </div>
-
-      <button type="submit" className="bg-colorContrast px-2 py-4 rounded-2xl hover:bg-colorPrimary hover:text-colorTextContrast">
-        Send E-mail
-      </button>
+      <ButtonWithIcon 
+        icon={<FiSend />}
+        size="normal"
+        text="Send E-mail"
+        type="submit"
+        contrast={true}
+        directionPrimary={false}
+      />
     </motion.form>
     </div>
   );

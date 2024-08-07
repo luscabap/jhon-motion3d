@@ -25,7 +25,7 @@ export const Header = () => {
     <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36 z-50 2xl:px-8`}>
       <div className="2xl:w-1/3">
         {
-          darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-8 2xl:h-8"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-8 2xl:h-8"/>
+          darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/>
         }
       </div>
 

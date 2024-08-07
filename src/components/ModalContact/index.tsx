@@ -25,7 +25,7 @@ export const ModalContact = () => {
       variants={itensVariants}
       animate={"open"}
       exit={"closed"}
-      className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50 2xl:w-1/3"
+      className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50 2xl:w-1/4"
     >
       <a href="https://wa.me/556798891617" target="_blank" className="flex items-center justify-start gap-2 hover:text-colorDark">
         <FaWhatsapp className="w-12 h-12"/>

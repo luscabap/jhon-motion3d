@@ -1,5 +1,7 @@
+import { IoChevronBack } from "react-icons/io5"
 import { useNavigate } from "react-router-dom"
-import { ButtonBackHomepage } from "../ButtonBackHomepage"
+import { ButtonWithIcon } from "../ButtonWithIcon"
+
 
 type MenuProjectProps = {
   nameProject: string | undefined,
@@ -12,7 +14,12 @@ export const MenuProject = ({ nameProject }: MenuProjectProps) => {
     <>
       <li className="text-colorTextContrast text-2xl">{nameProject}</li>
       <li onClick={() => navigate("/")} className="text-xs cursor-pointer">
-        <ButtonBackHomepage size="small"/>
+        <ButtonWithIcon 
+          size="small"
+          text="Back to homepage"
+          icon={<IoChevronBack />}
+          onClick={() => navigate("/")}
+        />
       </li>
     </>
   )

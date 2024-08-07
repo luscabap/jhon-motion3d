@@ -8,24 +8,34 @@ import { dataClients } from "../../data/dataClients";
 import { TitleSection } from "../TitleSection";
 
 export const CarouselClients = () => {
+
   return (
     <div>
       <TitleSection text="Clients"/>
       <Swiper
-        spaceBetween={40}
-        centeredSlides={true}
+        spaceBetween={10}
         slidesPerView={3}
         modules={[Autoplay]}
         loop={true}
+        centeredSlides={true}
+        breakpoints={{
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        }}
         autoplay={{
           delay: 2000,
         }}
         pagination={true}
-        className="max-w-full my-8 z-30"
+        className="max-w-full my-8 z-30 bg-red-400"
       >
         {dataClients.map((client) => (
-          <SwiperSlide key={client.id} className="bg-colorTerciary flex flex-col items-center justify-between min-h-52 rounded-lg z-30 lg:min-h-96 2xl:min-h-52 2xl:w-24">
-            <img src={client.srcImg} alt={`${client.name} logo`} className="rounded-lg 2xl:h-12"/>
+          <SwiperSlide 
+            key={client.id} 
+            className="bg-colorTerciary flex flex-col items-center justify-between min-h-52 rounded-lg z-30 lg:min-h-96 2xl:min-h-52"
+          >
+            <img src={client.srcImg} alt={`${client.name} logo`} className="rounded-lg 2xl:h-12 max-w-full"/>
             <h3 className="text-center text-colorContrast">{client.name}</h3>
           </SwiperSlide>
         ))}
