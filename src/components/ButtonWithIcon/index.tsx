@@ -9,7 +9,8 @@ type ButtonBackHomepageProps = {
   directionPrimary?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const ButtonWithIcon = ({ size, icon, text, contrast = false, directionPrimary = true, ... rest }:ButtonBackHomepageProps) => {
+export const ButtonWithIcon = ({ size, icon, text, contrast = false, directionPrimary = true, 
+  ... rest }:ButtonBackHomepageProps) => {
   const [stylesState, setStylesState] = useState({
     fontSize: "text-lg"
   })
