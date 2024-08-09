@@ -1,17 +1,21 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
+import { MdOutlineTranslate } from "react-icons/md";
+import { useParams } from "react-router-dom";
 import useThemeContext from "../../hooks/useThemeContext";
 import { Logo } from "../Logo";
 import { Menu } from "../Menu";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { MenuDesktop } from "../MenuDesktop";
-import { useParams } from "react-router-dom";
-import { MdOutlineTranslate } from "react-icons/md";
 import { MenuLanguage } from "../MenuLanguage";
 
-export const Header = () => {
+type HeaderProps = {
+  handleToggleLanguage: (lang: "en" | "pt") => void
+}
+
+export const Header = ({ handleToggleLanguage }: HeaderProps) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenuIsOpen = () => {
@@ -41,10 +45,9 @@ export const Header = () => {
         }
         <MdOutlineTranslate className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6" onClick={toggleModalLanguageIsOpen}/>
         {
-          modalLanguageIsOpen && <MenuLanguage closeMenuLanguage={closeMenuLanguage}/>
+          modalLanguageIsOpen && <MenuLanguage closeMenuLanguage={closeMenuLanguage} handleToggleLanguage={handleToggleLanguage}/>
         }
       </div>
-
       <MenuDesktop ternaryOperator={ternaryOperator}/>
       <div className="flex justify-center items-center 2xl:w-1/3 2xl:justify-end w-full">
         <Logo />
