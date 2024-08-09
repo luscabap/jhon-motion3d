@@ -1,4 +1,5 @@
 import { AboutMe } from "../../components/AboutMe";
+import { CarouselClients } from "../../components/CarouselClients";
 import { Contact } from "../../components/Contact";
 import { Indtroduction } from "../../components/Introduction";
 import { Projects } from "../../components/Projects";
@@ -11,8 +12,13 @@ export const HomePage = () => {
         <div className="flex flex-col w-full px-5 2xl:px-52">
           <Projects />
           <AboutMe />
-          <Contact />
         </div>
+        <div className="w-full">
+          <CarouselClients />
+        </div>
+        <div className="flex flex-col w-full px-5 2xl:px-52">
+          <Contact />
+        </div >
       </div>
     </div>
   );
