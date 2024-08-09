@@ -2,7 +2,7 @@ import { AboutMe } from "../../components/AboutMe";
 import { CarouselClients } from "../../components/CarouselClients";
 import { Contact } from "../../components/Contact";
 import { Indtroduction } from "../../components/Introduction";
-import { Projects } from "../../components/Projects";
+import { MyProjects } from "../../components/MyProjects";
 
 export const HomePage = () => {
   return (
@@ -10,7 +10,7 @@ export const HomePage = () => {
       <Indtroduction />
       <div className="flex flex-col items-center justify-start min-h-screen gap-12 relative bg-gradient-background mt-36">
         <div className="flex flex-col w-full px-5 2xl:px-52">
-          <Projects />
+          <MyProjects />
           <AboutMe />
         </div>
         <div className="w-full">

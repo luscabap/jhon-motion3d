@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 type ProjectBannerProps = {
   srcImg: string,
@@ -8,19 +7,20 @@ type ProjectBannerProps = {
   primary: boolean
 }
 
-export const ProjectBanner = ({ slugProject, srcImg, nameProject, primary }:ProjectBannerProps) => {
-  const navigate = useNavigate();
-  const animationX = primary ? 100 : -100
+export const ProjectBanner = ({ srcImg, nameProject, primary }:ProjectBannerProps) => {
+  const animationX = primary ? 100 : -100;
+
   return (
-      <motion.img
-        src={srcImg} 
-        alt={`${nameProject} banner`} 
-        onClick={() => navigate(`/project/${slugProject}`)}
-        className="cursor-pointer w-full lg:w-3/4 2xl:w-1/4 2xl:max-h-80 shadow-2xl hover:shadow-slate-800 rounded-lg"
-        initial={{ opacity: 0, x: animationX }}
-        whileInView={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: animationX }}
-        transition={{ duration: 0.5 }}
-      />
+      <div>
+        <motion.img
+          src={srcImg} 
+          alt={`${nameProject} banner`}
+          className="cursor-pointer w-full lg:w-3/4 2xl:w-full 2xl:max-h-80 shadow-2xl rounded-lg mx-auto"
+          initial={{ opacity: 0, x: animationX }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: animationX }}
+          transition={{ duration: 0.5 }}
+        />
+      </div>
   )
 }
