@@ -17,7 +17,7 @@ export const MenuLanguage = ({ closeMenuLanguage, handleToggleLanguage }: MenuLa
 
   return (
     <motion.div 
-      className="bg-colorSecondary absolute top-36 left-0 w-1/3 flex flex-col items-center justify-center h-40 rounded-br-lg origin-top-left"
+      className="bg-colorSecondary absolute top-36 left-0 w-1/3 flex flex-col items-center justify-center h-auto rounded-br-lg origin-top-left 2xl:w-1/6 py-4"
       initial={{
         scale: 0.1,
         opacity: 0.1
@@ -34,8 +34,16 @@ export const MenuLanguage = ({ closeMenuLanguage, handleToggleLanguage }: MenuLa
         duration: 0.2
       }}
     >
-      <LiaFlagUsaSolid className="w-20 h-20" onClick={() => handleClickFlag("en")}/>
-      <GiBrazilFlag className="w-20 h-20" onClick={() => handleClickFlag("pt")}/>
+      <div>
+        <LiaFlagUsaSolid 
+          className="w-20 h-20 cursor-pointer hover:text-colorDark hover:bg-gradient-USAFlag rounded-xl" onClick={() => handleClickFlag("en")}
+        />
+
+        <GiBrazilFlag 
+          className="w-20 h-20 cursor-pointer hover:text-colorDark hover:bg-gradient-BrazilFlag rounded-xl" onClick={() => handleClickFlag("pt")}
+        />
+      </div>
+      {/* <h5 className="text-center">Select the language</h5> */}
     </motion.div>
   )
 }
