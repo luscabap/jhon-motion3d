@@ -20,14 +20,13 @@ export const CarouselClients = () => {
         centeredSlides={true}
         breakpoints={{
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 3,
             spaceBetween: 10
           }
         }}
         autoplay={{
           delay: 2000,
         }}
-        loopAdditionalSlides={1}
         pagination={true}
         className="max-w-full my-8 z-30"
       >
