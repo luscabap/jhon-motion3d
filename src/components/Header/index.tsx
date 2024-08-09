@@ -44,9 +44,11 @@ export const Header = ({ handleToggleLanguage }: HeaderProps) => {
           darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/>
         }
         <MdOutlineTranslate className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6" onClick={toggleModalLanguageIsOpen}/>
-        {
-          modalLanguageIsOpen && <MenuLanguage closeMenuLanguage={closeMenuLanguage} handleToggleLanguage={handleToggleLanguage}/>
-        }
+        <AnimatePresence>
+          {
+            modalLanguageIsOpen && <MenuLanguage closeMenuLanguage={closeMenuLanguage} handleToggleLanguage={handleToggleLanguage}/>
+          }
+        </AnimatePresence>
       </div>
       <MenuDesktop ternaryOperator={ternaryOperator}/>
       <div className="flex justify-center items-center 2xl:w-1/3 2xl:justify-end w-full">
