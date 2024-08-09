@@ -24,7 +24,9 @@ export default {
         "fontContrast": ['Monad', 'cursive']
       },
       backgroundImage: {
-        'gradient-background': 'var(--backgroundGradient)'
+        'gradient-background': 'var(--backgroundGradient)',
+        'gradient-USAFlag': 'var(--backgroundUSAFlag)',
+        'gradient-BrazilFlag': 'var(--backgroundBrazilFlag)'
       }
     },
   },

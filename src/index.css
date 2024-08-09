@@ -19,6 +19,8 @@
   --colorBackgroundModal: #000000bf;
 
   --backgroundGradient: linear-gradient(180.2deg, rgb(50, 51, 55) 6.8%, rgb(48, 60, 66) 131%);
+  --backgroundUSAFlag: linear-gradient( #0a3161,#ffffff, #b13942);
+  --backgroundBrazilFlag: linear-gradient(#009739, #fedd00, #012169, #ffffff);
 }
 
 .light {
@@ -38,6 +40,8 @@
   --colorBackgroundModal: #000000bf;
 
   --backgroundGradient: linear-gradient(180.2deg, rgb(210, 210, 210) 6.8%, rgb(177, 177, 177) 131%);
+  --backgroundUSAFlag: linear-gradient(90deg, #0a3161,#b13942, #ffffff);
+  --backgroundBrazilFlag: linear-gradient(#009739, #fedd00, #012169, #ffffff);
 }
 
 @font-face {
