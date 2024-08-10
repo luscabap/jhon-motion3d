@@ -41,9 +41,9 @@ export const Header = ({ handleToggleLanguage }: HeaderProps) => {
     <header className={`fixed w-full ${menuIsOpen ? "bg-colorPrimary" : "bg-colorSecondary"} flex items-center justify-between px-2 h-36 z-50 2xl:px-8`}>
       <div className="2xl:w-1/3 flex items-center justify-center gap-4 w-1/5">
         {
-          darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6"/>
+          darkTheme ? <FaSun onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6 hover:text-colorContrast"/> : <FaMoon onClick={toggleTheme} className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6 hover:text-colorContrast"/>
         }
-        <MdOutlineTranslate className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6" onClick={toggleModalLanguageIsOpen}/>
+        <MdOutlineTranslate className="cursor-pointer w-12 h-12 2xl:w-6 2xl:h-6 hover:text-colorContrast" onClick={toggleModalLanguageIsOpen}/>
         <AnimatePresence>
           {
             modalLanguageIsOpen && <MenuLanguage closeMenuLanguage={closeMenuLanguage} handleToggleLanguage={handleToggleLanguage}/>
