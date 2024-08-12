@@ -7,6 +7,9 @@ const useCopyClipboard = () => {
     try {
       await navigator.clipboard.writeText(contentToCopy);
       setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 3000)
     } catch (error) {
       setIsCopied(false);
       console.log(error);
