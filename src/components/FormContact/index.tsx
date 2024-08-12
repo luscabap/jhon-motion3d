@@ -21,6 +21,7 @@ export const FormContact = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      id="emailContact"
     >
       <div className="flex flex-col gap-12 w-full">
         <div className="flex flex-col gap-12 w-full 2xl:flex-row 2xl:justify-between">
