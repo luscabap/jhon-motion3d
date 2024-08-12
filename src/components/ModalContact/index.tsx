@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-scroll";
+import { ButtonClipboard } from "../ButtonClipboard";
 
 
 type ModalContactProps = {
@@ -24,22 +25,13 @@ const itensVariants: Variants = {
 
 export const ModalContact = ({ pathname }:ModalContactProps) => {
 
-  const handleRedirectEmail = () => {
-    const email = "lucasbaptistasilva.dev@gmail.com";
-    const subject = "Teste";
-    const body = "Essa é uma mensagem de teste"
-    const linkMailTo = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-
-    window.open(linkMailTo, "_blank")
-  }
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       variants={itensVariants}
       animate={"open"}
       exit={"closed"}
-      className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50 2xl:w-1/4"
+      className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50 lg:w-1/4 items-start justify-center"
     >
       { pathname === "/"
         ? (
@@ -53,9 +45,10 @@ export const ModalContact = ({ pathname }:ModalContactProps) => {
           </Link>
         )
         : (
-          <button onClick={handleRedirectEmail}>
-            Send me an e-mail
-          </button>
+          <ButtonClipboard 
+            infoToClipboard="emaildojhonathan@gmail.com"
+            text="Send me an e-mail"
+          />
         )
       }
     </motion.div>
