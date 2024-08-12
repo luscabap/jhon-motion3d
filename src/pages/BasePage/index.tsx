@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IoCloseOutline } from "react-icons/io5";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { ModalContact } from "../../components/ModalContact";
@@ -19,6 +19,8 @@ export const BasePage = () => {
   const handleToggleLanguage = (lang: "en" | "pt") => {
     changeLanguage(lang)
   }
+
+  const local = useLocation();
 
   return (
     <main className="font-fontMain min-h-screen bg-gradient-background transition-all duration-500 ease-in-out text-colorTextPrimary text-xl 2xl:text-lg">
@@ -42,7 +44,7 @@ export const BasePage = () => {
           </AnimatePresence>
         </div>
         <AnimatePresence>
-          {modalContactIsOpen && <ModalContact />}
+          {modalContactIsOpen && <ModalContact pathname={local.pathname}/>}
         </AnimatePresence>
         <div>
           <Outlet />
