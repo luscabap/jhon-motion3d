@@ -31,7 +31,7 @@ export const Project = ({ imgBanner, name, primary, slug }: ProjectProps) => {
             className={`bg-colorBackgroundModal absolute top-0 right-0 bottom-0 left-0 items-center justify-center rounded-lg cursor-pointer
                 ${isVisible ? "flex" : "hidden"}`}
           >
-            <h4>{name}</h4>
+            <h4 className="text-colorLight">{name}</h4>
           </motion.div>
         )}
       </AnimatePresence>
