@@ -1,7 +1,11 @@
-import { FaWhatsapp } from "react-icons/fa";
+import { motion, Variants } from "framer-motion";
 import { MdAlternateEmail } from "react-icons/md";
-import { motion, Variants } from "framer-motion"
+import { Link } from "react-scroll";
 
+
+type ModalContactProps = {
+  pathname: string
+}
 
 const itensVariants: Variants = {
   open: {
@@ -18,7 +22,17 @@ const itensVariants: Variants = {
   }
 }
 
-export const ModalContact = () => {
+export const ModalContact = ({ pathname }:ModalContactProps) => {
+
+  const handleRedirectEmail = () => {
+    const email = "lucasbaptistasilva.dev@gmail.com";
+    const subject = "Teste";
+    const body = "Essa é uma mensagem de teste"
+    const linkMailTo = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    window.open(linkMailTo, "_blank")
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,14 +41,23 @@ export const ModalContact = () => {
       exit={"closed"}
       className="bg-colorContrast fixed right-2 bottom-24 w-3/4 flex flex-col gap-8 px-2 py-8 rounded-lg z-50 2xl:w-1/4"
     >
-      <a href="https://wa.me/556798891617" target="_blank" className="flex items-center justify-start gap-2 hover:text-colorDark">
-        <FaWhatsapp className="w-12 h-12"/>
-        <h5 className="text-xl cursor-pointer">Contact me in WhatsApp</h5>
-      </a>
-      <a className="flex items-center justify-start gap-2 hover:text-colorDark">
-        <MdAlternateEmail className="w-12 h-12"/>
-        <h5 className="text-xl cursor-pointer">Contact me in E-mail</h5>
-      </a>
+      { pathname === "/"
+        ? (
+          <Link 
+            className="flex items-center justify-start gap-2 hover:text-colorDark"
+            to="emailContact"
+            smooth={true}
+          >
+            <MdAlternateEmail className="w-12 h-12"/>
+            <h5 className="text-xl cursor-pointer">Contact me in E-mail</h5>
+          </Link>
+        )
+        : (
+          <button onClick={handleRedirectEmail}>
+            Send me an e-mail
+          </button>
+        )
+      }
     </motion.div>
   )
 }
